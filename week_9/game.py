@@ -67,7 +67,8 @@ class Game:
         """
         while not self.victory:
             # play turn
-            game.__single_turn()
+            self.__single_turn()
+
             if self.victory == "exit":
                 break
             self._check_victory()

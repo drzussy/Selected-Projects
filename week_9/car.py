@@ -25,6 +25,7 @@ class Car:
         self.location = location
         if orientation == 1 or orientation == 0:
             self.__orientation: int = orientation
+        self._possible_moves = {}
 
     def car_coordinates(self) -> List:
         """
@@ -70,7 +71,7 @@ class Car:
         #          'd': "cause the car to dig and reach the core of Earth",
         #          'a': "another unknown action"}
         # A car returning this dictionary supports the commands 'f','d','a'.
-
+        self._possible_moves_dict = possible_moves
         return possible_moves
 
     def movement_requirements(self, move_key) -> list:
@@ -82,7 +83,10 @@ class Car:
         # be empty in order to move down (with a key 'd').
         # implement your code and erase the "pass"
         empties: list = []
-        possibles: dict = self.possible_moves()
+        if len(self._possible_moves_dict) != 0:
+            possibles = self._possible_moves_dict
+        else:
+            possibles: dict = self.possible_moves() 
         if move_key in possibles:
             # get the tuple of coordinates that's in 3rd spot of string in value of move_key
             coor: Any = possibles[move_key].split()[3:5]

@@ -168,15 +168,19 @@ class Board:
             if move_key in 'dr':
                 self._change_cell_on_board(car.location, 'E')
                 if move_key == 'd':
-                    car.location = (new_row + 1, new_col)
+                    car.move('d')
+            #         car.location = (new_row + 1, new_col)
                 if move_key == "r":
-                    car.location = (new_row, new_col + 1)
+                    #         car.location = (new_row, new_col + 1)
+                    car.move("r")
             if move_key == 'l':
                 self._change_cell_on_board((row, col + car._Car__length), 'E')
-                car.location = (new_row, new_col - 1)
+                car.move("l")
+                #     car.location = (new_row, new_col - 1)
             if move_key == 'u':
                 self._change_cell_on_board((row + car._Car__length, col), 'E')
-                car.location = (new_row - 1, new_col)
+                car.move("u")
+                #     car.location = (new_row - 1, new_col)
             return True
         return False
 
