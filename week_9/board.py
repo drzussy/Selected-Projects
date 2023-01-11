@@ -1,5 +1,6 @@
 from car import *
 from game import *
+from typing import *
 
 
 class Board:
