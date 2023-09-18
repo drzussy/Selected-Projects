@@ -1,0 +1,88 @@
+# Introduction to Computer Science - intro2cs
+
+Welcome to "Noam Susman's Introduction to Computer Science" (intro2cs) repository! This repository contains the coursework and materials for the "Introduction to Computer Science" course at your university. The course covers various topics and assignments throughout its duration.
+
+## Course Overview
+
+This course is organized into weekly modules, each focusing on specific topics and assignments. Below, you'll find a brief overview of what to expect in each week. For more detailed information about each week, including assignments and code samples, please refer to the respective README files inside each week's folder.
+
+## Week-by-Week Overview
+
+### Week 1: Introduction to Python
+- An introduction to Python programming.
+- Basic coding concepts and Python language fundamentals.
+- Getting started with coding.
+
+[Detailed README](./week_1/README.md)
+
+### Week 2: Moving into Complexity
+- Building upon basic coding skills.
+- Introducing loops and control structures.
+- Handling more complex programming tasks.
+
+[Detailed README](./week_2/README.md)
+
+### Week 3: User Input and Image Processing
+- Exploring user input and interaction.
+- Implementing basic image processing techniques.
+- Converting images to black and white, pixelation, quantization, and more.
+
+[Detailed README](./week_3/README.md)
+
+### Week 4: Battleship Game Implementation
+- Creating a Battleship game.
+- Game logic, user interaction, and strategy.
+- Enhancing coding skills through game development.
+
+[Detailed README](./week_4/README.md)
+
+### Week 5: Moogle - The Harry Potter-Themed Search Engine
+- Developing a basic search engine named "Moogle" (Harry Potter-themed Google).
+- Introduction to web scraping and indexing.
+- Search queries and results retrieval.
+
+[Detailed README](./week_5/README.md)
+
+### Week 6: Exploring Recursion
+- Delving into recursion with 9 different recursive functions.
+- Understanding recursive problem-solving.
+- Advanced coding techniques using recursion.
+
+[Detailed README](./week_6/README.md)
+
+### Week 7: Backtracking and Shchor Uftor
+- Continuation of recursion with a focus on backtracking.
+- Implementing a function to solve the "Shchor Uftor" game.
+- Advanced recursive problem-solving.
+
+[Detailed README](./week_7/README.md)
+
+### Week 8: Car Game and API Exploration
+- Developing a car game using object-oriented programming (OOP).
+- Experimenting with different APIs and integrating them into the game.
+- Exploring creative possibilities with APIs.
+
+[Detailed README](./week_8/README.md)
+
+### Week 9: Functional Programming and Snakes
+- Introduction to functional programming concepts.
+- Implementing the game "Snakes" using functional programming.
+- Functional programming for game development.
+
+[Detailed README](./week_9/README.md)
+
+### Week 10: Collaborative Project - Boggle Game
+- Collaborative project with another student.
+- Implementing the game "Boggle" including the graphical user interface (GUI).
+- Combining skills from previous weeks to create a complete game.
+
+[Detailed README](./week_10/README.md)
+
+### Week 11 and 12: Joint Project Continued
+- Continuing the joint project to refine and complete the "Boggle" game.
+- Focusing on GUI development and user experience.
+- Presenting the final project to showcase your accomplishments.
+
+[Detailed README](./week_11/README.md)
+
+This README provides a high-level overview of the course. For in-depth information about each week's content, please explore the respective README files inside each week's folder.
