@@ -1,0 +1,49 @@
+# Week 8 - Intro to Computer Science Final Project
+
+## Overview
+
+Welcome to the final project of the Intro to Computer Science course! In this project, I have implemented nine recursive functions in Python to demonstrate various concepts and problem-solving skills. Each function serves a unique purpose and showcases different aspects of recursion.
+
+## Project Structure
+
+- **ex7.py**: This is the main Python file containing all the recursive functions.
+- **ex7_helper.py**: An auxiliary file that provides helper functions and constants required for some of the recursive functions.
+- **hanoi_game.py**: A GUI interface for playing the Tower of Hanoi game using the recursive `play_hanoi` function.
+
+## Function Descriptions
+
+### Function 1 - `mult(x: N, y: int) -> N`
+This function calculates the product of two numbers `x` and `y` using recursion. It repeatedly adds `x` to itself `y` times.
+
+### Function 2 - `is_even(n: int) -> bool`
+The `is_even` function checks if a positive integer `n` is even or odd using recursion. It repeatedly subtracts 2 from `n` until it reaches 0 or 1, determining its evenness.
+
+### Function 3 - `log_mult(x: N, y: int) -> N`
+`log_mult` performs efficient multiplication with a logarithmic runtime. It uses recursion to optimize the multiplication process by halving `y` and adding `x` accordingly.
+
+### Function 4 - `is_power(b: int, x: int) -> bool`
+This function checks if there exists a non-negative integer `n` such that `b` raised to the power of `n` equals `x`. It uses recursion to explore different power values and validate the condition.
+
+### Function 5 - `reverse(s: str) -> str`
+`reverse` reverses a given string `s` using recursion. It builds the reversed string character by character.
+
+### Function 6 - `play_hanoi(hanoi: Any, n: int, src: Any, dest: Any, temp: Any) -> None`
+This function implements the Tower of Hanoi game recursively. It moves a tower of `n` disks from the source peg to the destination peg using an auxiliary peg.
+
+### Function 7 - `number_of_ones(n: int) -> int`
+`number_of_ones` counts the total number of '1's in the binary representations of all numbers from 0 to `n`. It utilizes recursion to explore and count '1's in each number.
+
+### Function 8 - `compare_2d_lists(l1: List[List[int]], l2: List[List[int]]) -> bool`
+This function recursively compares two-dimensional lists `l1` and `l2` for equality. It checks if the lists have the same structure and corresponding elements.
+
+### Function 9 - `magic_list(n: int) -> list[Any]`
+`magic_list` generates a nested list structure containing `None` values. The depth of nesting is determined by the input integer `n`.
+
+## Helper Files
+
+- **hanoi_game.py**: This GUI interface allows you to interactively play the Tower of Hanoi game using the `play_hanoi` function.
+
+## Usage
+
+You can use and test these recursive functions by importing the `ex7.py` module into your Python environment. The provided helper functions and constants in `ex7_helper.py` support some of these functions.
+

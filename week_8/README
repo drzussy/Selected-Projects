@@ -1,0 +1,39 @@
+
+# Week 8 - Shachor Uftor Puzzle Solver
+
+## Overview
+
+Welcome to Week 8 of the Intro to Computer Science course! In this week's project, I have implemented a collection of recursive functions to solve the Shachor Uftor puzzle. This puzzle involves filling in a grid while adhering to certain constraints provided as input. The goal is to find a valid solution to the puzzle or count the number of valid solutions.
+
+## Project Structure
+
+- **puzzle_solver.py**: This is the main Python file containing all the recursive functions for solving the Shachor Uftor puzzle.
+- **ex8_helper.py**: An auxiliary file that provides helper functions and type definitions required for some of the recursive functions.
+
+## Function Descriptions
+
+### Function 1 - `max_first_seen(picture: Picture, row: int, col: int) -> int`
+This function finds the first cell in a row (from left) and column (from top) that isn't black. Undecided cells (-1) are considered white (1).
+
+### Function 2 - `max_seen_cells(picture: Picture, row: int, col: int) -> int`
+This function calculates the number of seen cells from the current cell. Any unknown cell is considered a white cell (1).
+
+### Function 3 - `check_constraints(picture: Picture, constraints_set: Set[Constraint]) -> int`
+Iterates over all constraints in a set and checks if each constraint is satisfied. Returns 0 if not satisfied, 1 if all constraints are exactly satisfied, and 2 if constraints are satisfied but not exactly.
+
+### Function 4 - `solve_puzzle(constraints_set: Set[Constraint], n: int, m: int) -> Optional[Picture]`
+This function finds a solution to the Shachor Uftor puzzle using backtracking. It takes a set of constraints and the dimensions of the puzzle grid as input and returns a valid solution or `None` if no solution exists.
+
+### Function 5 - `how_many_solutions(constraints_set: Set[Constraint], n: int, m: int) -> int`
+Calculates the number of valid solutions to the puzzle for a given set of constraints and puzzle dimensions.
+
+### Function 6 - `minimize_constraint_set(constraints: Set[Constraint], rows, cols) -> Set[Constraint]`
+Minimizes the constraint set by removing constraints that do not affect the number of valid solutions.
+
+### Function 7 - `generate_puzzle(picture: Picture) -> Set[Constraint]`
+Generates a set of constraints that matches a given puzzle board, ensuring the generated constraints have only one valid solution.
+
+## Usage
+
+You can use the functions in `puzzle_solver.py` to solve Shachor Uftor puzzles by providing a set of constraints and puzzle dimensions. Additionally, you can generate puzzles by providing a solved board.
+

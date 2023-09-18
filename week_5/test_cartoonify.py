@@ -43,7 +43,7 @@ def test_combine_channels():
 
 def test_RGB2grayscale():
     assert RGB2grayscale([[[100, 180, 240]]]) == [[163]]
-    assert RGB2grayscale([[[200, 0, 14], [15, 6, 50]]]) == [[61, 14]]
+    assert RGB2grayscale([[[200, 0, 14], [15, 6, 50~]]]) == [[61, 14]]
 
 
 def test_blur_kernel():

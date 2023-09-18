@@ -16,4 +16,4 @@ def _all_perm_helper(lst, ind):
         lst[ind], lst[i] = lst[i], lst[ind]
 
 
-# all_permutations([1, 2, 3])
+all_permutations([1, 2, 3])

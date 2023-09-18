@@ -1,0 +1,94 @@
+
+# Week 5 - Image Processing with Python
+
+Welcome to Week 5 of our Intro to Computer Science course, where we delved into the world of image processing using Python. This week, we explored various techniques for editing and manipulating images.
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Image Editing Functions](#image-editing-functions)
+- [Usage](#usage)
+- [Example Commands](#example-commands)
+- [Additional Notes](#additional-notes)
+- [Code Implementation](#code-implementation)
+
+## Introduction
+
+Image processing is a captivating field that involves operations such as converting images to grayscale, blurring them, resizing them, and detecting edges. Throughout this assignment, we worked with both single-channel (grayscale) and multi-channel (RGB) images. Here's a summary of what we accomplished:
+
+- **Grayscale Conversion**: We converted colored images into grayscale representations.
+- **Blur**: We applied blurring effects to images to make them smoother.
+- **Resize**: We changed image sizes while maintaining their visual quality.
+- **Rotate**: We rotated images by 90 degrees in either direction.
+- **Edge Detection**: We detected edges in images to make important features stand out.
+- **Quantization**: We simplified images by reducing the number of distinct colors.
+
+We also covered essential concepts in image processing, including the use of kernels, bilinear interpolation, and quantization.
+
+## Getting Started
+
+Before we began, we ensured that the necessary libraries were installed. This was accomplished by running the following command:
+
+```bash
+pip install pillow
+```
+
+The main script we utilized for these image processing tasks was `image_editor.py`. This script contains the functions required for image manipulation and provides a command-line interface for applying these functions to our images.
+
+## Image Editing Functions
+
+Let's review the image editing functions available in `image_editor.py`:
+
+- **Grayscale Conversion**: Converts colored images into grayscale.
+- **Blur**: Applies a blurring effect with a specified kernel size.
+- **Resize**: Changes image sizes using bilinear interpolation.
+- **Rotate**: Rotates images by 90 degrees (left or right).
+- **Edge Detection**: Detects edges in images using custom parameters.
+- **Quantization**: Reduces the number of color shades in images.
+
+## Usage
+
+To utilize the `image_editor.py` script, we opened a terminal window and executed the following command:
+
+```bash
+python image_editor.py [image_path]
+```
+
+We replaced `[image_path]` with the path to the image file that required editing. The script loaded the image and presented a menu with various image processing options.
+
+## Example Commands
+
+Here are some sample commands that were employed with the script:
+
+- `1` - Converted the image to grayscale.
+- `2` - Applied a blur effect to create a smoother appearance.
+- `3` - Resized the image to specific dimensions.
+- `4` - Rotated the image 90 degrees (left or right).
+- `5` - Detected edges in the image to emphasize features.
+- `6` - Quantized the image, simplifying it to the desired number of shades.
+- `7` - Displayed the current state of the image.
+- `8` - Saved the edited image and exited the program.
+
+## Additional Notes
+
+Here are some important considerations:
+
+- During script execution, we followed on-screen instructions to provide values or make selections.
+- Multiple editing operations could be applied sequentially before saving the final image.
+- The edited image was saved in PNG format within the current working directory.
+
+## Code Implementation
+
+The `image_editor.py` script consists of functions for various image processing operations:
+
+- **Grayscale Conversion (`RGB2grayscale`)**: This function converts colored (RGB) images into grayscale by calculating weighted sums of color channels for each pixel.
+
+- **Blur (`apply_kernel`)**: The blurring function uses convolution with a kernel to smooth images. A larger kernel size results in more blurring.
+
+- **Resize (`resize`)**: Resizing images while preserving quality is achieved through bilinear interpolation. The function calculates new pixel values based on relative positions.
+
+- **Edge Detection (`get_edges`)**: This function detects edges by comparing pixel intensities with their local neighborhood's average intensity.
+
+- **Quantization (`quantize`)**: Quantization reduces the number of shades in a single-channel image by mapping intensity values to a reduced set.
+
+These functions are accessed through a command-line menu, allowing users to apply them to images interactively.

@@ -86,6 +86,30 @@ def validate_kernalized_pixel(pixel: int) -> int:
     return round(pixel)
 
 
+# def find_pixel_area_avg(row: int, col: int, image: list, size: int) -> int:
+#     '''this function iterates over the span of a kernel relative to
+#     a center starting point of any pixel in the image and returns the
+#     kernelized pixel value'''
+#     center = (size // 2)
+#     pixel = 0
+#     counter = 0
+#     # iterate over span of kernel relative to center
+#     for i in range(row - center, size - center + row):
+#         for j in range(col - center, size - center + col):
+#             # if not inside image (to the left or up)
+#             if i < 0 or j < 0:
+#                 counter += 1
+#                 continue
+#             # try to add current pixel, if error then add to counter
+#             try:
+#                 pixel += image[i][j]
+#             except IndexError:
+#                 counter += 1
+#     # add overflow add kernelize pixel
+#     pixel += (counter * image[row][col])
+#     pixel = pixel / (size ** 2)
+#     return int(validate_kernalized_pixel(pixel))
+
 def find_pixel_area_avg(row: int, col: int, image: list, size: int) -> int:
     '''this function iterates over the span of a kernel relative to
     a center starting point of any pixel in the image and returns the
@@ -97,16 +121,11 @@ def find_pixel_area_avg(row: int, col: int, image: list, size: int) -> int:
     for i in range(row - center, size - center + row):
         for j in range(col - center, size - center + col):
             # if not inside image (to the left or up)
-            if i < 0 or j < 0:
+            if i < 0 or j < 0 or i >= len(image) or j >= len(image[0]):
                 counter += 1
                 continue
-            # try to add current pixel, if error then add to counter
-            try:
-                pixel += image[i][j]
-            except IndexError:
-                counter += 1
+            pixel += image[i][j]
     # add overflow add kernelize pixel
-    pixel += (counter * image[row][col])
     pixel = pixel / (size ** 2)
     return int(validate_kernalized_pixel(pixel))
 
