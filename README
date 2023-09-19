@@ -5,21 +5,23 @@ Welcome to my GitHub repository showcasing various projects I worked on during m
 
 ## Python Projects
 
-### Project 1 - Boggle Game
 
-- **Description**: This project features a Boggle game implemented in Python, complete with a graphical user interface (GUI) and game logic implemented using OOP principles. The game employs backtracking algorithms to find valid words on the Boggle board.
 
-### Project 2 - Rush-Hour Game
 
-- **Description**: In this project, I implemented the Rush Hour puzzle game in Python using OOP principles. The Rush Hour game involves sliding blocks to free a specific vehicle and solve the puzzle. Designing classes for game elements and solving algorithms to find optimal moves are key aspects of this project.
 
-### Project 3 - Image Processing
+### Project 1 - Image Processing
 
 - **Description**: This project explores various image processing techniques using Python.
 
-### Project 4 - Search Engine
+### Project 2 - Search Engine
 
 - **Description**: The Search Engine project involves building a search engine in Python using web scraping techniques. It includes crawling web pages, extracting data, indexing content, and providing search functionality.
+### Project 2 - Rush-Hour Game
+
+- **Description**: In this project, I implemented the Rush Hour puzzle game in Python using OOP principles. The Rush Hour game involves sliding blocks to free a specific vehicle and solve the puzzle. Designing classes for game elements and solving algorithms to find optimal moves are key aspects of this project.
+### Project 4 - Boggle Game
+
+- **Description**: This project features a Boggle game implemented in Python, complete with a graphical user interface (GUI) and game logic implemented using OOP principles. The game employs backtracking algorithms to find valid words on the Boggle board.
 
 ## C Projects
 
