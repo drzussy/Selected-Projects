@@ -10,7 +10,7 @@ The following code solves 4 different problems presented that were solved analyt
 ## Code overview
 Our approach to the problem was to use OOP methods to create a Charge class and to place it in different shapes that represent 2d or 3d space.
 
- Each problem has a python code file that imports these modules and uses them in different ways to recreate the proper conditions.
+ Each problem has a python code file that imports these modules and uses them in different ways to create the proper conditions.
 
  To properly analyize the problem all data is represented visualy during the program run and saved in a spreadsheet when the run is concluded.
 
