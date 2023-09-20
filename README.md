@@ -18,15 +18,4 @@ This repository contains various projects and code implementations covering a ra
 
 8. **Web Scraping and Search Engines**: Dive into web scraping and search engine principles, with code for making HTTP requests, parsing HTML, and building a basic search engine.
 
-
-
-
-
-
-
-
-
-
-
-
 For more details on each project, navigate to the respective subdirectory and consult the project's README file.
