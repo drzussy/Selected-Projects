@@ -4,33 +4,29 @@ This repository contains various projects and code implementations covering a ra
 
 1. **Boggle Game**: 
 
-A Python implementation of the classic word game, Boggle, with features like word validation, scoring, and random board generation.
+An OOP Python implementation of the classic word game, Boggle, with features like word validation, scoring, and random board generation.
 
 2. **ChargeFlowSim**: 
 
-Simulate charge flow inside a conductor, with projects solving various analytical and numerical problems related to electricity and magnetism.
+A Python OOP program that Simulates charge flow inside a conductor, with projects solving various analytical and numerical problems related to electricity and magnetism.
 
 3. **Image Processing with Python**: 
 
 Image processing techniques in Python, including grayscale conversion, blurring, resizing, and edge detection.
 
-4. **Project 5B - Generic Markov Chain Text Generator**:
+4. **Project 5 - Markov Chain Text Generator**:
 
- A generic Markov chain text generator program in C++, capable of handling various data types and generating random sentences.
+ A generic and non generic Markov chain text generator program in C, capable of handling various data types and generating random sentences.
 
-5. **Markov Chain Tweet Generator**: 
-
-Generate random tweets using a Markov chain-based text generator written in C.
-
-6. **MLP Network Image Classification**: 
+5. **MLP Network Image Classification**: 
 
 A Multi-Layer Perceptron (MLP) network for image classification using C++.
 
-7. **Rush Hour Game**:
+6. **Rush Hour Game**:
 
  A version of the classic puzzle game "Rush Hour" using Python and object-oriented programming principles.
 
-8. **Web Scraping and Search Engines**: 
+7. **Web Scraping and Search Engines**: 
 
 Web scraping and search engine principles, with code for making HTTP requests, parsing HTML, and building a basic search engine.
 
