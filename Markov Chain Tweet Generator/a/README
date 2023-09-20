@@ -1,4 +1,4 @@
-# Project 5A - Markov Chain Tweet Generator
+# Markov Chain Tweet Generator
 
 This project is a Markov chain-based tweet generator written in C. It reads text data from a file, builds a Markov chain model, and generates random tweets based on the learned patterns.
 

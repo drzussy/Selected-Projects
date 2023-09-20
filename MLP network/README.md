@@ -1,75 +1,24 @@
-# Project 6 - MLP Network Image Classification
-
-Welcome to my custom Multi-Layer Perceptron (MLP) network image classification program. This project demonstrates my programming skills in C++ and showcases my ability to implement and utilize neural networks for image classification.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Usage](#usage)
-- [Code Structure](#code-structure)
-- [Network Architecture](#network-architecture)
-- [Testing](#testing)
-
-## Introduction
-
-This program implements an MLP network for image classification. It loads pre-trained weights and biases for the network's layers and provides a command-line interface (CLI) for image classification. The code is organized and well-structured to ensure readability and maintainability.
-
-## Prerequisites
-
-To run this program, you'll need a C++ compiler. You can compile and execute the code on your local machine.
-
-## Usage
-
-1. Clone the repository to your local machine:
-
-   ```bash
-   git clone https://github.com/your-username/mlp-network-image-classification.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd mlp-network-image-classification
-   ```
-
-3. Compile the program:
-
-   ```bash
-   g++ -o mlpnetwork main.cpp Matrix.cpp MlpNetwork.cpp Dense.cpp Activation.cpp -std=c++11
-   ```
-
-4. Run the program:
-
-   ```bash
-   ./mlpnetwork weights/w1 weights/w2 weights/w3 weights/w4 biases/b1 biases/b2 biases/b3 biases/b4
-   ```
-
-   Replace `weights/w1`, `weights/w2`, `weights/w3`, `weights/w4`, `biases/b1`, `biases/b2`, `biases/b3`, and `biases/b4` with the actual paths to the weight and bias files for your MLP network.
-
-5. Follow the program's prompts to input an image path. The program will classify the image using the MLP network and display the results.
-
-## Code Structure
-
-The code is well-structured and organized into several files:
-
-- `main.cpp`: This is the main program file that handles command-line arguments, user input, and the overall program flow.
-- `Matrix.cpp`: Contains the implementation of the `Matrix` class, a fundamental component for matrix operations in the network.
-- `MlpNetwork.cpp`: This file houses the implementation of the `MlpNetwork` class, where the MLP network architecture and classification logic are defined.
-- `Dense.cpp`: The `Dense` class is implemented in this file, representing a dense layer in the MLP network.
-- `Activation.cpp`: Contains various activation functions used throughout the network.
+# MLP Network
+### This program was given as the first assignment in the CPP part of the C\CPP workshop course in the Computer Science program of the Hebrew University. This program implements a MLP NN designed to read images of handwritten digits with high predictability, helping learn concepts in OOP and CPP such as classes, const & const return types, references and operator overloading.
 
 ## Network Architecture
+The architecture of this NN is 4 layered with each layer's input being multiplied by a matrix of row dimensions matching the next layer's input size (the weights). Following the linear transformation implemented by the matrix multiplication, a bias is added and an activation function used before passing the output on as the next layers input. Exact dimensions and functions used in each layer are presented in this table:
+| Layer | Linear Transformation | Weight Dimensions | Bias | Activation Function |
+|:-------:|:-----------------------:|:-------------------:|:------:|:---------------------:|
+|   1   | <img src="https://render.githubusercontent.com/render/math?math=T:\mathbb{R}^{784}\rightarrow\mathbb{R}^{128}"> | <img src="https://render.githubusercontent.com/render/math?math=W \in M_{128\times784}"> | <img src="https://render.githubusercontent.com/render/math?math=b_{1} \in \mathbb{R}^{128}"> | <img src="https://render.githubusercontent.com/render/math?math=Relu">|
+|   2   | <img src="https://render.githubusercontent.com/render/math?math=T:\mathbb{R}^{128}\rightarrow\mathbb{R}^{64}"> | <img src="https://render.githubusercontent.com/render/math?math=W \in M_{64\times128}"> | <img src="https://render.githubusercontent.com/render/math?math=b_{2} \in \mathbb{R}^{64}"> | <img src="https://render.githubusercontent.com/render/math?math=Relu">|
+|   3   | <img src="https://render.githubusercontent.com/render/math?math=T:\mathbb{R}^{64}\rightarrow\mathbb{R}^{20}"> | <img src="https://render.githubusercontent.com/render/math?math=W \in M_{20\times64}"> | <img src="https://render.githubusercontent.com/render/math?math=b_{3} \in \mathbb{R}^{20}"> | <img src="https://render.githubusercontent.com/render/math?math=Relu">|
+|   4   | <img src="https://render.githubusercontent.com/render/math?math=T:\mathbb{R}^{20}\rightarrow\mathbb{R}^{10}"> | <img src="https://render.githubusercontent.com/render/math?math=W \in M_{10\times20}"> | <img src="https://render.githubusercontent.com/render/math?math=b_{4} \in \mathbb{R}^{10}"> | <img src="https://render.githubusercontent.com/render/math?math=SoftMax">|
 
-I have designed the MLP network architecture in the `MlpNetwork` class within the `MlpNetwork.cpp` file. The network comprises four dense layers:
+After going through the network, each coordinate in the vector is assigned a probability with the number assigned the highest probability being the correct prediction.
+We note that this program was built with trained weights and biases already available, with no training implemented in this program.
 
-- Layer 1: Input layer with 784 neurons (corresponding to a 28x28 image).
-- Layer 2: Hidden layer with 128 neurons and ReLU activation.
-- Layer 3: Hidden layer with 64 neurons and ReLU activation.
-- Layer 4: Output layer with 10 neurons and softmax activation (for digit classification).
+## Program Input
+Trained biases and weights are provided in separate files for each layer, as an array of floats of length of the multiplication of the relevant matrix or vector. The program file can be called with these files given as parameters. Subsequently, the user will be asked to enter a path as an image to be processed - the image shall be coded as a binary matrix of pixels of shades of gray of the following dimensions - <img src="https://render.githubusercontent.com/render/math?math=M_{28\times28}"> again vectorized as an array of floats.
 
-The program loads pre-trained weights and biases for each layer from binary files provided as command-line arguments. It's important to ensure that the weights and biases files match the expected dimensions based on the network architecture.
-
-## Testing
-
-In addition to the main program, I have also included a test file, `test.cpp`, which tests various aspects of the code, including the `Matrix` class and other functionalities. This test file demonstrates my commitment to code quality and reliability.
+## Code Design
+The program was designed with 4 main class used:
+1. Matrix - Implements the mathematical abstraction of a Matrix including various mathematical operations on Matrices.
+2. Activation - Implements the different activation functions used in the different layers.
+3. Dense - Implements a layer in the NN including applying a layer to an input.
+4. MlpNetwork - Implements the whole NN, including applying the network to an input.

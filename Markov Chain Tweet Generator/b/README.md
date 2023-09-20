@@ -1,4 +1,4 @@
-# Project 5B - Generic Markov Chain Text Generator
+# Generic Markov Chain Text Generator
 
 This is a generic Markov Chain text generator program that reads input text and generates random sentences based on the statistical patterns it finds in the input data. It uses generic programming concepts in C to make it adaptable to various data types and can generate multiple random sentences.
 
