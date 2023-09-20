@@ -10,7 +10,6 @@ Welcome to my custom Multi-Layer Perceptron (MLP) network image classification p
 - [Code Structure](#code-structure)
 - [Network Architecture](#network-architecture)
 - [Testing](#testing)
-- [License](#license)
 
 ## Introduction
 
@@ -74,7 +73,3 @@ The program loads pre-trained weights and biases for each layer from binary file
 ## Testing
 
 In addition to the main program, I have also included a test file, `test.cpp`, which tests various aspects of the code, including the `Matrix` class and other functionalities. This test file demonstrates my commitment to code quality and reliability.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. Feel free to use and modify the code for your own projects. If you encounter any issues or have suggestions for improvements, please don't hesitate to reach out or contribute through pull requests. Happy image classification!
