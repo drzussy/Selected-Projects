@@ -5,6 +5,7 @@ Written by Computer Science and Physics students Noam Susman and Dror De-Hartug,
 
 ## project overview
 The following code solves 4 different problems presented that were solved analyticaly using mathematical tools and then were solved numerically with the following code. 
+For a full explanation of the problems, refer to the pdf file.
 
 
 ## Code overview
