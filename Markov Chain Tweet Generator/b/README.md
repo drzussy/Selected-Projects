@@ -9,7 +9,6 @@ This is a generic Markov Chain text generator program that reads input text and 
 - [Algorithm Overview](#algorithm-overview)
 - [Code Structure](#code-structure)
 - [Generic Programming](#generic-programming)
-- [License](#license)
 
 ### Prerequisites
 
