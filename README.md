@@ -10,11 +10,15 @@ An OOP Python implementation of the classic word game, Boggle, with features lik
 
 A Python OOP program that Simulates charge flow inside a conductor, with projects solving various analytical and numerical problems related to electricity and magnetism.
 
+3. **From Nand to Tetris**:
+
+HDL implementations of units ranging from basic logic gates through memory units all the way to Von Neumin architecture and low-level assembly programming.
+
 3. **Image Processing with Python**: 
 
 Image processing techniques in Python, including grayscale conversion, blurring, resizing, and edge detection.
 
-4. **Project 5 - Markov Chain Text Generator**:
+4. **Markov Chain Text Generator**:
 
  A generic and non generic Markov chain text generator program in C, capable of handling various data types and generating random sentences.
 
