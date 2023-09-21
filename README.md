@@ -12,7 +12,7 @@ A Python OOP program that Simulates charge flow inside a conductor, with project
 
 3. **HDL and low-level programming**:
 
-HDL implementations of units ranging from basic logic gates through memory units all the way to Von Neumin architecture and low-level assembly programming.
+HDL implementations of units ranging from basic logic gates through memory units all the way to  Von Neumann architecture and low-level assembly programming.
 
 4. **Image Processing with Python**: 
 
