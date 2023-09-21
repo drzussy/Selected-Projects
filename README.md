@@ -6,7 +6,7 @@ This repository contains various projects and code implementations covering a ra
 
 An OOP Python implementation of the classic word game, Boggle, with features like word validation, scoring, and random board generation.
 
-2. **ChargeFlowSim**: 
+2. **Charge Simulator**: 
 
 A Python OOP program that Simulates charge flow inside a conductor, with projects solving various analytical and numerical problems related to electricity and magnetism.
 
