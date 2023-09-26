@@ -33,3 +33,15 @@ Below is a concise summary of what is covered in this repository, by subdirector
 - Representation of low-level assembly instructions.
 - Writing programs in a custom assembly language tailored to the provided computer architecture.
 
+### 6: Assembler Implementation With Python
+- 3 modules; Parser, SymbolTable and Code that together are a program designed to translate code written in a symbolic machine language into code written in binary machine language.
+- Use Main to run said code.
+- To Run input: 
+
+``` bash
+Assembler <path>/file.asm
+# or for all files in a directory
+Assembler ~/nand/dir/
+```
+- output files will be <"filename">.hack
+- test and compare files are in the test sub-directory
