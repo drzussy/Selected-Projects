@@ -14,40 +14,24 @@ This is a generic Markov Chain text generator program that reads input text and 
 
 You'll need a C compiler to build and run this program. The code is written in C, so you can use compilers like GCC.
 
-### Usage
+To use this Markov chain tweet generator, follow these steps:
 
-1. Clone the repository to your local machine:
-
-   ```
-   git clone https://github.com/your-username/generic-markov-chain-text-generator.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```
-   cd generic-markov-chain-text-generator
+1. Compile the program using a C compiler, e.g., `gcc`:
+   ```bash
+   gcc -o tweet_generator main.c markov_chain.c linked_list.c
    ```
 
-3. Compile the program:
-
-   ```
-   gcc -o markov_generator main.c linked_list.c markov_chain.c
-   ```
-
-4. Run the program with the desired arguments. You need to provide the following arguments:
-
-   - Seed: An unsigned integer to initialize the random number generator.
-   - Number of Sentences: The number of random sentences to generate.
-   - Path to Text Corpus: The path to the text corpus file containing the source text.
-   - (Optional) Number of Words to Read: The maximum number of words to read from the text corpus. If not provided, the program will read the entire file.
-
-   Example usage:
-
-   ```
-   ./markov_generator 12345 5 path/to/text_corpus.txt 1000
+2. Run the program with the following command:
+   ```bash
+   ./tweet_generator <seed> <num_tweets> <text_corpus_file> [num_words_to_read]
    ```
 
-   This command generates 5 random sentences using a random seed of 12345, reads from the "text_corpus.txt" file, and limits the maximum number of words to 1000.
+   - `<seed>`: An unsigned integer value to seed the random number generator.
+   - `<num_tweets>`: The number of tweets to generate.
+   - `<text_corpus_file>`: The path to the text corpus file containing the source text.
+   - `[num_words_to_read]` (optional): The number of words to read from the text corpus (default is to read all words).
+
+3. The program will generate and print random tweets to the standard output.
 
 ## Algorithm Overview
 
