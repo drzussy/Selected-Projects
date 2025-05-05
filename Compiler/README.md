@@ -1,93 +1,112 @@
-Overview
-uthreads provides:
+---
 
-Thread creation & lifecycle management (spawn, block, resume, sleep, terminate)
+# ex5.checker – Semantic Checker & Symbol Management for s-Java
 
-Preemptive scheduling via virtual timer (SIGVTALRM) and quantums
+This package implements a semantic checker for the s-Java language. It provides scoped variable tracking, type enforcement, assignment rules, and error reporting for compilation.
+Refer to my_tests file for examples of valid and invalid code that ou may run through the compiler.
+---
 
-Per-thread context switching with sigsetjmp/siglongjmp
+## Components Overview
 
-Memento-style snapshots of stacks for clean teardown
+### SymbolTable
 
-Quick Start
-cpp
-Copy
-Edit
-#include "uthreads.h"
+Central class for managing declared variables and their scope.
 
-void threadFuncA() { /* … */ }
-void threadFuncB() { /* … */ }
+* **Variable Declaration**: Declares variables with type, finality, and assignment state.
+* **Assignment**: Assigns values to variables, checking type compatibility and finality.
+* **Scoping**:
 
-int main() {
-    if (uthread_init(100000 /* 100 ms quantum */) < 0) return 1;
+  * `enterScope()` / `exitScope()` handle nested blocks.
+  * Variables follow lexical scoping and shadowing rules.
+* **Snapshot System**:
 
-    int tid1 = uthread_spawn(threadFuncA);
-    int tid2 = uthread_spawn(threadFuncB);
+  * `getGlobalSnapshot()` / `restoreGlobalSnapshot(...)`
+  * `getLocalSnapshot()` / `restoreLocalSnapshot(...)`
+  * Useful for temporary analysis (e.g., method pre-checks).
+* **Parameter Declaration**: Declared as assigned by default.
 
-    // … run until exit …
-    return 0;
-}
-Compile & link:
+Each variable is stored as a `Map<String, VarType>` with:
 
-bash
-Copy
-Edit
-g++ -std=c++11 -Wall -pthread your_app.cpp uthreads.cpp -o your_app
-Core API
-Function	Description	Return
-int uthread_init(int quantum_usecs)	Initialize library, main thread, timer handler & signal mask.	0 on success, -1
-int uthread_spawn(fp)	Create new thread running fp(), assign TID, schedule it.	new TID, or -1
-int uthread_terminate(int tid)	Terminate thread tid. If tid==0, shuts down library & exits.	0 or -1
-int uthread_block(int tid)	Block runnable thread tid (cannot block main).	0 or -1
-int uthread_resume(int tid)	Unblock thread tid, enqueue if not sleeping.	0 or -1
-int uthread_sleep(int quantums)	Sleep current thread for quantums ticks. Main cannot sleep.	0 or -1
-int uthread_get_tid()	Return calling thread’s TID.	TID
-int uthread_get_total_quantums()	Total quantums since init (all threads).	quantum count
-int uthread_get_quantums(int tid)	Quantums consumed by thread tid.	count or -1
+* `"isFinal"`: `FINAL` or `NOT_FINAL`
+* `"type"`: one of `INT`, `DOUBLE`, `CHAR`, `STRING`, `BOOLEAN`
+* `"isAssigned"`: `ASSIGNED` or `UNASSIGNED`
 
-Design Highlights
-Thread Control Block (TCB)
+---
 
-Holds tid, stack pointer, sigjmp_buf env, state, entry point & quantum count
+### VarType (enum)
 
-Uses architecture-specific translate_address() hack for env->__jmpbuf
+Represents primitive types, assignment states, and finality. Includes:
 
-Preemptive Scheduler
+* `INT`, `DOUBLE`, `CHAR`, `STRING`, `BOOLEAN`
+* `ASSIGNED`, `UNASSIGNED`
+* `FINAL`, `NOT_FINAL`
 
-Virtual timer (ITIMER_VIRTUAL) fires every quantum
+#### Methods:
 
-timer_handler() blocks signals, updates sleepers, increments counters, then context_switch()
+* `stringTypeToVarType(String)` – Converts `"int"` to `VarType.INT`.
+* `valueToVarType(String)` – Infers type from value string (`"5" → INT`).
+* `checkLegalAssignment(receiver, giver)` – Allows valid type promotions:
 
-Round-Robin
+  * Valid: `int → double`, `int → boolean`, `double → boolean`
+  * Invalid: all other cross-type assignments
 
-Ready queue: std::deque<int> ready_threads
+---
 
-On switch: save current via sigsetjmp, enqueue if runnable, then siglongjmp to next
+### CompileException
 
-Sleeping / Blocking
+Base exception for compile-time errors.
 
-sleeping_threads map of (tid → remaining_quantums)
+Static constructors for common errors:
 
-Each tick decrements and re-enqueues when zero
+* `methodDoesntEnd()`
+* `doubleMethodDeclaration(name)`
+* `invalidVarType()`
+* `noVarNameFound()`
+* `illegalComment()`
+* `invalidStatement()`
+* `invalidMethodDeclaration()`
+* `methodDoesNotExist(name)`
+* `wrongParameterCount(shouldBe, passed)`
 
-Signal Safety
+---
 
-SignalBlocker RAII class blocks/unblocks SIGVTALRM in critical sections
+### IllegalSymbolException
 
-Memory Management
+Subclass of `CompileException`, thrown on illegal symbol operations.
 
-Per-thread stack allocated via malloc(STACK_SIZE)
+Covers:
 
-Deferred frees collected in stacks_to_free to avoid freeing active stack
+* Undefined variable: `symbolNotFound(name)`
+* Unassigned usage: `unassignedUsage(name)`
+* Re-declaration: `varAlreadyExists(name)`
+* Assignment to `final`: `assignmentToFinalVar(name)`
+* Type mismatch: `illegalAssignment(receiver, giver)`
+* Final declared without initialization: `uninitializedFinalVar(name)`
+* Reserved variable name: `illegalVarName(name)`
+* Snapshot misuse:
 
-Use Cases
-Operating Systems projects: demonstrate context-switching, preemption, and scheduling
+  * No current local scope: `noLocalTableFound()`
+  * Null snapshot: `noSnapshotGiven()`
 
-Interview demos: explain setjmp/longjmp, timer signals, and user-level threading
+---
 
-Requirements
-POSIX-compliant OS (Linux, macOS)
+## Example
 
-C++11 or newer
+```java
+symbolTable.enterScope();
+symbolTable.declareVar("x", VarType.NOT_FINAL, VarType.INT);
+symbolTable.assignToVar("x", VarType.INT);
+VarType xType = symbolTable.getVariableTypeIfAssigned("x"); // INT
+symbolTable.exitScope();
+```
 
-No external dependencies
+---
+
+## Notes
+
+* Reserved names like `"true"`/`"false"` are not allowed as variable identifiers.
+* Final variables must be initialized immediately.
+* Scope stack ensures variable shadowing is handled correctly.
+* Exceptions are designed to be descriptive and recoverable.
+
+---
