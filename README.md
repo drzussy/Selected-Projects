@@ -1,37 +1,34 @@
-# My Selected Projects Repository
-
+My Selected Projects Repository
 This repository contains various projects and code implementations covering a range of topics. Each project is organized into its own subdirectory and comes with its own README file for detailed information. Here's a brief overview of the projects you'll find in this directory:
 
-1. **Compiler in Java**:
+1. Boggle Game:
 
-   Using OOP to implement a compiler for a simplified Java language. Uses regex to parse text and identify tokens.
+   * An OOP Python implementation of the classic word game, Boggle, with features like word validation, scoring, and random board generation.
 
-2. **MLP Network Image Classification**: 
+2. Charge Simulator:
 
-   A Multi-Layer Perceptron (MLP) network for image classification using C++.
+   * A Python OOP program that simulates charge flow inside a conductor, with projects solving various analytical and numerical problems related to electricity and magnetism.
 
-3. **Thread Library in C++**:
+3. Compiler in Java:
 
-   Implementing a round-robin multi-threading C++ library.
+   * Using OOP to implement a compiler for a simplified Java language. Uses regex to parse text and identify tokens.
 
-4. **Web Scraping and Search Engines**: 
+4. Image Processing with Python:
 
-   Web scraping and search engine principles, with code for making HTTP requests, parsing HTML, and building a basic search engine.
+   * Image processing techniques in Python, including grayscale conversion, blurring, resizing, and edge detection.
 
-5. **Charge Simulator**: 
+5. Markov Chain Text Generator:
 
-   A Python OOP program that simulates charge flow inside a conductor, with projects solving various analytical and numerical problems related to electricity and magnetism.
+   * A generic and non-generic Markov chain text generator program in C, capable of handling various data types and generating random sentences.
 
-6. **Markov Chain Text Generator**:
+6. MLP Network Image Classification:
 
-   A generic and non-generic Markov chain text generator program in C, capable of handling various data types and generating random sentences.
+   * A Multi-Layer Perceptron (MLP) network for image classification using C++.
 
-7. **Image Processing with Python**: 
+7. Thread Library in C++:
 
-   Image processing techniques in Python, including grayscale conversion, blurring, resizing, and edge detection.
+   * Implementing a round-robin multi-threading C++ library.
 
-8. **Boggle Game**: 
+8. Web Scraping and Search Engines:
 
-   An OOP Python implementation of the classic word game, Boggle, with features like word validation, scoring, and random board generation.
-
-For more details on each project, navigate to the respective subdirectory and consult the project's README file.
+   * Web scraping and search engine principles, with code for making HTTP requests, parsing HTML, and building a basic search engine.
