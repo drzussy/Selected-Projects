@@ -1,6 +1,6 @@
 ---
 
-# ex5.checker – Semantic Checker & Symbol Management for s-Java
+# Checker – Semantic Checker & Symbol Management for s-Java
 
 This package implements a semantic checker for the s-Java language. It provides scoped variable tracking, type enforcement, assignment rules, and error reporting for compilation.
 Refer to my_tests file for examples of valid and invalid code that ou may run through the compiler.

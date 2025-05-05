@@ -1,4 +1,4 @@
-package ex5.checker;
+package checker;
 
 /**
  * The CompileException class represents specific exceptions that occur during the compilation of s-java code.

@@ -1,4 +1,4 @@
-package ex5.checker;
+package checker;
 
 import java.util.ArrayList;
 import java.util.HashMap;

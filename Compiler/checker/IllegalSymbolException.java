@@ -1,4 +1,4 @@
-package ex5.checker;
+package checker;
 
 /**
  * The IllegalSymbolException class represents exceptions related to invalid operations

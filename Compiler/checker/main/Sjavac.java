@@ -1,10 +1,11 @@
-package ex5.main;
+package checker.main;
 
-import ex5.checker.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.regex.Pattern;
+
+import checker.*;
 
 /**
  * The Sjavac class provides functionality to validate `.sjava` files for syntax correctness.
