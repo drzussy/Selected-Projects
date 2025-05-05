@@ -1,0 +1,10 @@
+int a;
+void foo(){
+int b = 7;
+a=5;
+return;
+}
+void boo(){
+int c = a;
+return;
+}

@@ -1,0 +1,11 @@
+int a=3;
+void foo(){
+boo();
+a=4;
+return;
+}
+void boo(){
+foo();
+a=5;
+return;
+}

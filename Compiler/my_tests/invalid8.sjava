@@ -1,0 +1,9 @@
+int a = 3;
+void spam (int a,    boolean c) {
+    int b=7;
+
+
+        int a=a;
+return;
+}
+// this test checks that the line numbers are correct (should be 6, not 4)
