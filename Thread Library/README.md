@@ -1,13 +1,10 @@
-Thought for a second
-
-
 # UThreads — User-Level Threads Library in C++
 
 A lightweight cooperative/preemptive user-level threads (“uthreads”) library using `SIGVTALRM`, `setjmp/longjmp`, and round-robin scheduling.
 
 ---
 
-## 📋 Overview
+## Overview
 
 `uthreads` provides:
 
@@ -18,7 +15,7 @@ A lightweight cooperative/preemptive user-level threads (“uthreads”) library
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```cpp
 #include "uthreads.h"
@@ -42,7 +39,7 @@ g++ -std=c++11 -Wall -pthread your_app.cpp uthreads.cpp -o your_app
 
 ---
 
-## 🔑 Core API
+## Core API
 
 | Function                              | Description                                                      | Return               |
 | ------------------------------------- | ---------------------------------------------------------------- | -------------------- |
@@ -58,7 +55,7 @@ g++ -std=c++11 -Wall -pthread your_app.cpp uthreads.cpp -o your_app
 
 ---
 
-## ⚙️ Design Highlights
+## Design Highlights
 
 1. **Thread Control Block (TCB)**
 
@@ -91,13 +88,13 @@ g++ -std=c++11 -Wall -pthread your_app.cpp uthreads.cpp -o your_app
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 * **Operating Systems projects**: demonstrate context-switching, preemption, and scheduling
 
 ---
 
-## 🛠️ Requirements
+## Requirements
 
 * POSIX-compliant OS (Linux, macOS)
 * C++11 or newer
