@@ -4,6 +4,7 @@
 
 This package implements a semantic checker for the s-Java language. It provides scoped variable tracking, type enforcement, assignment rules, and error reporting for compilation.
 Refer to my_tests file for examples of valid and invalid code that ou may run through the compiler.
+Refer to the uml of the project for full api and structure.
 ---
 
 ## Components Overview
